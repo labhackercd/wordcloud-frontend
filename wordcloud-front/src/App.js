@@ -5,7 +5,9 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { COLORS } from "./config/config_constants";
 import "./App.css";
 
+import PageDrawer from "./containers/PageDrawer"; 
 import InitialPage from "./containers/InitialPage"; 
+
 
 import { ptBR } from "@material-ui/core/locale";
 
@@ -23,13 +25,15 @@ const theme = createMuiTheme(
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <InitialPage></InitialPage>
-          </Route>
-        </Switch>
-      </Router>
+      <PageDrawer>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <InitialPage></InitialPage>
+            </Route>
+          </Switch>
+        </Router>
+      </PageDrawer>
     </ThemeProvider>
   );
 }
