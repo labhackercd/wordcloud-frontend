@@ -7,7 +7,7 @@ import "./App.css";
 
 import PageDrawer from "./containers/PageDrawer"; 
 import InitialPage from "./containers/InitialPage"; 
-
+import WordCloud from './containers/WordCloud'
 
 import { ptBR } from "@material-ui/core/locale";
 
@@ -30,6 +30,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <InitialPage></InitialPage>
+            </Route>
+            <Route exact path="/wordcloud">
+              <WordCloud></WordCloud>
             </Route>
           </Switch>
         </Router>

@@ -32,7 +32,7 @@ export default function PageDrawer(props) {
       <Container maxWidth="lg">
         <Header title="WordCloud" sections={sections} />
         <main>
-            <Box display="flex" alignItems="center" justifyContent="center" marginTop={4}>
+            <Box display="flex" alignItems="center" justifyContent="center" marginTop={10}>
                 {props.children}
             </Box>   
         </main>
