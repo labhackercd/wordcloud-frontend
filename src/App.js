@@ -1,12 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { COLORS } from "./config/config_constants";
 import "./App.css";
-
 import PageDrawer from "./containers/PageDrawer"; 
-import InitialPage from "./containers/InitialPage"; 
 import WordCloud from './containers/WordCloud'
 
 import { ptBR } from "@material-ui/core/locale";
@@ -29,9 +26,6 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <InitialPage></InitialPage>
-            </Route>
-            <Route exact path="/wordcloud">
               <WordCloud></WordCloud>
             </Route>
           </Switch>

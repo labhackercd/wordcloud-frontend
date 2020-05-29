@@ -8,12 +8,10 @@ import Link from '@material-ui/core/Link';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        WordCloud
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      {'Projeto do © '}
+      <Link color="inherit" href="http://labhackercd.leg.br/">
+        LABHacker
+      </Link>
     </Typography>
   );
 }
@@ -32,14 +30,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer(props) {
   const classes = useStyles();
-  const { description, title } = props;
+  const { description} = props;
 
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="lg">
-        <Typography variant="h6" align="center" gutterBottom>
-          {title}
-        </Typography>
+      <Container maxWidth="md">
+
         <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
           {description}
         </Typography>
