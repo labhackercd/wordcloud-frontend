@@ -31,7 +31,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Grid container xs={12}>
+        <Grid container >
           <Grid item align="center" xs={12}>
             <Box padding={1}>
                 <Box display={{ xs: 'block', md: 'none' }}>
@@ -46,10 +46,10 @@ export default function Header(props) {
 
       </Toolbar>
       <Divider></Divider>
-      <Grid container xs={12}>
-        <Grid item align="center" xs={12}>
+      <Grid container>
+        <Grid item align="center">
           <Box>
-            <p style={{lineHeight: 2, fontSize: "1rem", fontFamily: "'Roboto', sans-serif;", textAlign: "center", margin: '3rem 4rem 0 4rem'}}> A nuvem de palavras abaixo foi gerada utilizando o conteúdo
+            <p style={{lineHeight: 2, fontSize: "1rem", fontFamily: "'Roboto', sans-serif", textAlign: "center", margin: '3rem 4rem 0 4rem'}}> A nuvem de palavras abaixo foi gerada utilizando o conteúdo
             textual da ferramenta <a href="https://edemocracia.camara.leg.br/audiencias/">
             Audiências Interativas </a>. <br />O conteúdo inclui as respostas às perguntas feitas 
             durante transmissões e abaixo estão as palavras e expressões mais frequentes que encontramos.</p>
