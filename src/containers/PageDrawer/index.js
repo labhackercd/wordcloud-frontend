@@ -1,18 +1,15 @@
  
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Box from '@material-ui/core/Box'
 
-const useStyles = makeStyles((theme) => ({
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
-}));
-
+//In case you want different sections in navbar, just add it as the commented lines below
+const sections = [
+];
+/*
 const sections = [
   { title: 'Audiências Interativas', url: '#' },
   { title: 'Enquetes', url: '#' },
@@ -20,11 +17,11 @@ const sections = [
   { title: 'Saiba mais', url: '#' },
   { title: 'O LABHacker', url: '#' },
 ];
-
+*/
 
 
 export default function PageDrawer(props) {
-  const classes = useStyles();
+  //const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -32,7 +29,7 @@ export default function PageDrawer(props) {
       <Container maxWidth="lg">
         <Header title="WordCloud" sections={sections} />
         <main>
-            <Box display="flex" alignItems="center" justifyContent="center" marginTop={4}>
+            <Box display="flex" alignItems="center" justifyContent="center" marginTop={10}>
                 {props.children}
             </Box>   
         </main>
