@@ -6,30 +6,58 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
+//import api from './api'
+
+function convertTupleToJson(tuple){
+  let textValue = tuple[0];
+  let finalText;
+
+  if(textValue[1]){
+     finalText = textValue[0] + " " + textValue[1]
+  }else {
+     finalText = textValue[0]
+  }
+
+  return ({
+    text: finalText,
+    value: tuple[1],
+  })
+
+}
+
 export default function WordCloud(props) {
   const [data, setData] = useState({ hits: [] });
   const [isLoading, setIsLoading] = useState(false);
-  const [url, setUrl] = useState('/api') // This will load the data from the proxy url, this url can be found in package.json
-
-
+  const [url] = useState('/api') // This will load the data from the proxy url, this url can be found in package.json
+  
    
   useEffect(() => {
+
     const fetchData = async () => {
       setIsLoading(true);
+      
       const result = await axios(url);
-      setData(result.data);
+      //const result = api;
+      let jsonObject = []
+      let i;
+      
+      for (i = 0; i < result.length; i++) {
+        jsonObject.push(convertTupleToJson(result[i]))
+      }
+      
+      setData(jsonObject);
 
       setIsLoading(false);
     };
  
-    fetchData();
-  }, []);
+     fetchData();
+  },);
 
 
   return (
     <div style={{ width: '100%', height: '100%'}}>
       {isLoading ? (
-        <Grid container xs={12} align="center" alignContent="center" alignItems="center">
+        <Grid container  align="center" alignContent="center" alignItems="center">
           <Grid item xs={12}>
             <CircularProgress color="primary"></CircularProgress>
           </Grid>
