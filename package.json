@@ -27,7 +27,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "https://localhost:8000",
+  "proxy": "https://visualizacoes.labhackercd.leg.br",
   "browserslist": {
     "production": [
       ">0.2%",
