@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import ReactWordcloud from 'react-wordcloud';
-import words from './words'
 import axios from 'axios'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid'
@@ -10,17 +9,16 @@ import Box from '@material-ui/core/Box'
 export default function WordCloud(props) {
   const [data, setData] = useState({ hits: [] });
   const [isLoading, setIsLoading] = useState(false);
-  //const [url, setUrl] = useState('https://edemocracia.camara.leg.br/api/v1/',)
+  const [url, setUrl] = useState('/api') // This will load the data from the proxy url, this url can be found in package.json
 
 
    
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      //const result = await axios(url);
-      //setData(result.data);
+      const result = await axios(url);
+      setData(result.data);
 
-      setData(words)//TODO For test purposes, remove it from production version
       setIsLoading(false);
     };
  
