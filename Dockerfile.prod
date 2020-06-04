@@ -1,5 +1,5 @@
 FROM node:latest
-run npm install -g serve
+RUN npm install -g serve
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 
@@ -8,11 +8,6 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app
 
 RUN npm install --silent
-
-ADD node_modules /usr/src/app/node_modules
-ADD public /usr/src/app/public
-
 RUN npm run build
-
 
 CMD ["serve","-s", "build"]
