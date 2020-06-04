@@ -19,7 +19,7 @@ function convertTupleToJson(tuple){
   }
 
   return ({
-    text: finalText,
+    text: finalText, 
     value: tuple[1],
   })
 
@@ -28,8 +28,7 @@ function convertTupleToJson(tuple){
 export default function WordCloud(props) {
   const [data, setData] = useState({ hits: [] });
   const [isLoading, setIsLoading] = useState(false);
-  const [url] = useState('/api') // This will load the data from the proxy url, this url can be found in package.json
-  
+  const url = "http://localhost:8000/api";
    
   useEffect(() => {
 
@@ -37,21 +36,22 @@ export default function WordCloud(props) {
       setIsLoading(true);
       
       const result = await axios(url);
-      //const result = api;
       let jsonObject = []
       let i;
+
+      const resultData = result.data;
       
-      for (i = 0; i < result.length; i++) {
-        jsonObject.push(convertTupleToJson(result[i]))
+      for (i = 0; i < resultData.length; i++) {
+        jsonObject.push(convertTupleToJson(resultData[i]))
       }
-      
+
       setData(jsonObject);
 
       setIsLoading(false);
     };
  
      fetchData();
-  },);
+  },[]);
 
 
   return (
