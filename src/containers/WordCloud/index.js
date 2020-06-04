@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 
-//import api from './api'
+import api from './api'
 
 function convertTupleToJson(tuple){
   let textValue = tuple[0];
@@ -53,7 +53,6 @@ export default function WordCloud(props) {
      fetchData();
   },[]);
 
-
   return (
     <div style={{ width: '100%', height: '100%'}}>
       {isLoading ? (
@@ -89,6 +88,7 @@ export default function WordCloud(props) {
               spiral: 'archimedean',
             }}
           ></ReactWordcloud>
+          <center style={{margin: '1.5rem 0 0 0'}}><i>Atualizado diariamente </i></center>
         </React.Fragment>
       )}
     </div>

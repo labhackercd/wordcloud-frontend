@@ -49,9 +49,10 @@ export default function Header(props) {
       <Grid container>
         <Grid item align="center">
           <Box>
-            <p style={{lineHeight: 2, fontSize: "1rem", fontFamily: "'Roboto', sans-serif", textAlign: "center", margin: '3rem 4rem 0 4rem'}}> A nuvem de palavras abaixo foi gerada utilizando o conteúdo
+            <p style={{lineHeight: 2, fontSize: "1rem", fontFamily: "'Roboto', sans-serif", textAlign: "center", margin: '3rem 4rem -2rem 4rem'}}> A nuvem de palavras abaixo foi gerada utilizando o conteúdo
             textual da ferramenta <a href="https://edemocracia.camara.leg.br/audiencias/">
-            Audiências Interativas </a>. <br />O conteúdo inclui as respostas às perguntas feitas 
+            Audiências Interativas </a>. <br />
+            O conteúdo inclui as as perguntas feitas na comissão CEXCORVI(Comissão Externa destinada a acompanhar ações preventivas da vigilância sanitária e possíveis consequências para o Brasil quanto ao enfrentamento da pandemia causada pelo coronavírus)
             durante transmissões e abaixo estão as palavras e expressões mais frequentes que encontramos.</p>
           </Box>
         </Grid>
